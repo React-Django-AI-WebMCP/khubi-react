@@ -1,0 +1,20 @@
+---
+description: How to use MCP (Model Context Protocol) tools in this project
+alwaysApply: true
+---
+
+# MCP Tools
+
+## Configuration
+
+- MCP server config lives in **`mcp/mcp.json`**. Add or edit entries under `mcpServers` to enable MCP servers for this project.
+
+## When Using MCP Tools
+
+1. **Check the schema first**: Before calling any MCP tool, read the tool’s descriptor/schema (e.g. under `mcps/<server>/tools/`) so you use the correct parameters and behavior.
+2. **Resources**: Use `list_mcp_resources` / `fetch_mcp_resource` to discover and read MCP resources when needed.
+3. **Don’t guess parameters**: Required and optional parameters are defined in the tool schema; use them as specified.
+
+## Adding a New MCP Server
+
+Edit `mcp/mcp.json` and add a new key under `mcpServers` with the server name and its configuration (e.g. `command`, `args`, or `url` depending on the server type). Restart or reload Cursor so the new server is loaded.
